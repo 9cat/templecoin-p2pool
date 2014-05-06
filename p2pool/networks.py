@@ -46,6 +46,26 @@ nets = dict(
         VERSION_CHECK=lambda v: 50700 <= v < 60000 or 60010 <= v < 60100 or 60400 <= v,
     ),
     
+	 templecoin=math.Object(
+        PARENT=networks.nets['templecoin'],
+        SHARE_PERIOD=15, # seconds
+        CHAIN_LENGTH=24*60*60//10, # shares
+        REAL_CHAIN_LENGTH=24*60*60//10, # shares
+        TARGET_LOOKBEHIND=200, # shares
+        SPREAD=3, # blocks
+        IDENTIFIER='e03255b8c6923410'.decode('hex'),
+        PREFIX='7238c1a53ef629b0'.decode('hex'),
+        P2P_PORT=19325,
+        MIN_TARGET=0,
+        MAX_TARGET=2**256//2**20 - 1,
+        PERSIST=True,
+        WORKER_PORT=19327,
+        BOOTSTRAP_ADDRS='192.241.224.207'.split(' '),
+        ANNOUNCE_CHANNEL='#p2pool-tpc',
+        VERSION_CHECK=lambda v: True,
+        VERSION_WARNING=lambda v: 'Upgrade Templecoin NOW @ http://www.templecoin.com!' if v < 280701 else None,
+    ),
+	
     litecoin=math.Object(
         PARENT=networks.nets['litecoin'],
         SHARE_PERIOD=15, # seconds
