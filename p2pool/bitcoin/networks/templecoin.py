@@ -26,4 +26,4 @@ ADDRESS_EXPLORER_URL_PREFIX = 'http://insight.templecoin.org/address/'
 TX_EXPLORER_URL_PREFIX = 'http://insight.templecoin.org/tx/'
 SANE_TARGET_RANGE = (2**256//1000000000 - 1, 2**256//1000 - 1)
 DUMB_SCRYPT_DIFF = 2**16
-DUST_THRESHOLD = 0.03e8
+DUST_THRESHOLD = 0.001e8
