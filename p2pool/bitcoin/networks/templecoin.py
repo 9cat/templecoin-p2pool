@@ -16,7 +16,7 @@ RPC_CHECK = defer.inlineCallbacks(lambda bitcoind: defer.returnValue(
             not (yield bitcoind.rpc_getinfo())['testnet']
         ))
 #SUBSIDY_FUNC = lambda height: 1*100000000 >> (height + 1)//840000
-SUBSIDY_FUNC = 1
+SUBSIDY_FUNC = lambda height: 1
 POW_FUNC = lambda data: pack.IntType(256).unpack(__import__('ltc_scrypt').getPoWHash(data))
 BLOCK_PERIOD = 150 # s
 SYMBOL = 'TPC'
